@@ -40,17 +40,21 @@ const Navbar = () => {
               <li>
                 <NavLink>Services</NavLink>
               </li>
-              <li>
-                <NavLink>Dashboard</NavLink>
-                <ul className="p-2">
-                  <li>
-                    <Link>Submenu 1</Link>
-                  </li>
-                  <li>
-                    <Link>Submenu 2</Link>
-                  </li>
-                </ul>
-              </li>
+              {user ? (
+                <li>
+                  <NavLink>Dashboard</NavLink>
+                  <ul className="p-2">
+                    <li>
+                      <Link>Submenu 1</Link>
+                    </li>
+                    <li>
+                      <Link>Submenu 2</Link>
+                    </li>
+                  </ul>
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
           <img src={logo} alt="" />
@@ -58,25 +62,29 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <NavLink>Home</NavLink>
+              <NavLink to="home">Home</NavLink>
             </li>
 
             <li>
               <NavLink>Services</NavLink>
             </li>
-            <li tabIndex={0}>
-              <details>
-                <summary>Dashboard</summary>
-                <ul className="p-2">
-                  <li>
-                    <Link>Submenu 1</Link>
-                  </li>
-                  <li>
-                    <Link>Submenu 2</Link>
-                  </li>
-                </ul>
-              </details>
-            </li>
+            {user ? (
+              <li tabIndex={0}>
+                <details>
+                  <summary>Dashboard</summary>
+                  <ul className="p-2">
+                    <li>
+                      <Link>Submenu 1</Link>
+                    </li>
+                    <li>
+                      <Link>Submenu 2</Link>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            ) : (
+              ""
+            )}
           </ul>
         </div>
         <div className="navbar-end">

@@ -9,8 +9,8 @@ const Navbar = () => {
     logOut().then().catch();
   };
   return (
-    <div className="navbar bg-base-100">
-      <div className="navbar bg-base-100 max-w-7xl mx-auto">
+    <div className="navbar bg-[#325343]">
+      <div className="navbar bg-transparent max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -100,13 +100,13 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-content rounded-box w-52"
               >
                 <li>
-                  <button className="btn btn-sm text-black btn-ghost">
+                  <button className="btn btn-sm text-white btn-ghost">
                     {user.displayName}
                   </button>
                 </li>
                 <li>
                   <button
-                    className="btn btn-sm text-black btn-ghost"
+                    className="btn btn-sm text-white btn-ghost"
                     onClick={handleSignOut}
                   >
                     Logout

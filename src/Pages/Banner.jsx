@@ -13,8 +13,8 @@ const Banner = () => {
           <h2 className="text-xl text-center text-white">
             What type of therapy are you looking for?
           </h2>
-          <div className="flex justify-between">
-            <div className="w-96 h-72 relative bg-[#367547] rounded-lg hover:border border-white cursor-pointer">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 justify-between ">
+            <div className="lg:w-96 lg:h-72 relative bg-[#367547] rounded-lg hover:border border-white cursor-pointer">
               <img
                 src={individualImg}
                 alt="Background"
@@ -25,7 +25,7 @@ const Banner = () => {
                 <p className="mt-2">For Yourself</p>
               </div>
             </div>
-            <div className="w-96 h-72 relative bg-[#447676] rounded-lg hover:border border-white cursor-pointer">
+            <div className="lg:w-96 lg:h-72 relative bg-[#447676] rounded-lg hover:border border-white cursor-pointer">
               <img
                 src={coupleImg}
                 alt="Background"
@@ -36,7 +36,7 @@ const Banner = () => {
                 <p className="mt-2">For me and my partner</p>
               </div>
             </div>
-            <div className="w-96 h-72 relative bg-[#a55c00] rounded-lg hover:border border-white cursor-pointer">
+            <div className="lg:w-96 lg:h-72 relative bg-[#a55c00] rounded-lg hover:border border-white cursor-pointer">
               <img
                 src={teenImg}
                 alt="Background"

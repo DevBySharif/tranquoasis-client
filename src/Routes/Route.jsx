@@ -3,6 +3,7 @@ import MainLayout from "../Components/Layout/MainLayout";
 import Error from "../Pages/Error";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
+import PopularServices from "../Pages/PopularServices";
 import Register from "../Pages/Register";
 
 const Route = createBrowserRouter([
@@ -14,6 +15,11 @@ const Route = createBrowserRouter([
       {
         path: "home",
         element: <Home></Home>,
+      },
+      {
+        path: "popular-services",
+        element: <PopularServices></PopularServices>,
+        loader: () => fetch("http://localhost:5005/api/v1/popular-services"),
       },
     ],
   },

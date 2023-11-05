@@ -75,7 +75,7 @@ const Login = () => {
 
           {loginError && <p className="text-red-500">{loginError}</p>}
 
-          <p className="flex justify-between">
+          <p className="flex justify-between text-white">
             Don't have an account?
             <Link className="text-green-200" to="/register">
               Register

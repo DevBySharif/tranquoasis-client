@@ -9,8 +9,8 @@ const SocialLogin = () => {
   };
   return (
     <div>
-      <div className="divider">Continue With</div>
-      <div className="flex justify-center">
+      <div className="divider text-white">Continue With</div>
+      <div className="flex justify-center text-white">
         <button
           className="font-bold"
           onClick={() => handleSocialLogin(googleLogin)}

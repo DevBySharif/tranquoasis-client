@@ -24,17 +24,7 @@ const PopularServices = () => {
           ></PopularServiceCard>
         ))}
       </div>
-      {/* <div>
-        {popularService.length > 4 && (
-          <button
-            
-            onClick={() => setIsShow(!isShow)}
-            className="px-5 py-3 bg-green-500 text-lg text-white font-bold block mx-auto rounded-md"
-          >
-            {isShow ? "See less" : "See more"}
-          </button>
-        )}
-      </div> */}
+
       <div className="flex justify-center my-6">
         <Link to="/services">
           <button className="btn btn-primary">Show More</button>

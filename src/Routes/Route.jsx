@@ -26,6 +26,10 @@ const Route = createBrowserRouter([
         path: "services",
         element: <Services></Services>,
       },
+      {
+        path: "addService",
+        element: <AddService></AddService>,
+      },
     ],
   },
   {
@@ -35,10 +39,6 @@ const Route = createBrowserRouter([
   {
     path: "/register",
     element: <Register></Register>,
-  },
-  {
-    path: "/addService",
-    element: <AddService></AddService>,
   },
 ]);
 

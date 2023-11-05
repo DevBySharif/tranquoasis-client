@@ -45,7 +45,7 @@ const Navbar = () => {
                   <NavLink>Dashboard</NavLink>
                   <ul className="p-2">
                     <li>
-                      <Link>Submenu 1</Link>
+                      <Link to="/addService">Add-A-Service</Link>
                     </li>
                     <li>
                       <Link>Submenu 2</Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <NavLink>Services</NavLink>
+              <NavLink to="services">Services</NavLink>
             </li>
             {user ? (
               <li tabIndex={0}>
@@ -74,7 +74,7 @@ const Navbar = () => {
                   <summary>Dashboard</summary>
                   <ul className="p-2">
                     <li>
-                      <Link>Submenu 1</Link>
+                      <Link to="/addService">Add-A-Service</Link>
                     </li>
                     <li>
                       <Link>Submenu 2</Link>

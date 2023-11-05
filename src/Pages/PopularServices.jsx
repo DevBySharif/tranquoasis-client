@@ -1,11 +1,45 @@
-import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import PopularServiceCard from "./PopularServiceCard";
 
 const PopularServices = () => {
-  const popularService = useLoaderData();
-  console.log(popularService);
+  const [popularService, setPopularService] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5005/api/v1/popular-services")
+      .then((res) => res.json())
+      .then((data) => {
+        setPopularService(data);
+      });
+  }, []);
+
   return (
-    <div>
-      <h1>Popular Pervices</h1>
+    <div className="max-w-7xl mx-auto my-12">
+      <h1 className="text-5xl font-bold text-center mb-12">Popular Services</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+        {popularService?.slice(0, 4).map((service) => (
+          <PopularServiceCard
+            key={service._id}
+            service={service}
+          ></PopularServiceCard>
+        ))}
+      </div>
+      {/* <div>
+        {popularService.length > 4 && (
+          <button
+            
+            onClick={() => setIsShow(!isShow)}
+            className="px-5 py-3 bg-green-500 text-lg text-white font-bold block mx-auto rounded-md"
+          >
+            {isShow ? "See less" : "See more"}
+          </button>
+        )}
+      </div> */}
+      <div className="flex justify-center my-6">
+        <Link to="/services">
+          <button className="btn btn-primary">Show More</button>
+        </Link>
+      </div>
     </div>
   );
 };

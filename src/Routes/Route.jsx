@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Components/Layout/MainLayout";
+import AddService from "../Pages/AddService";
 import Error from "../Pages/Error";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import PopularServices from "../Pages/PopularServices";
 import Register from "../Pages/Register";
+import Services from "../Pages/Services";
 
 const Route = createBrowserRouter([
   {
@@ -19,7 +21,10 @@ const Route = createBrowserRouter([
       {
         path: "popular-services",
         element: <PopularServices></PopularServices>,
-        loader: () => fetch("http://localhost:5005/api/v1/popular-services"),
+      },
+      {
+        path: "services",
+        element: <Services></Services>,
       },
     ],
   },
@@ -30,6 +35,10 @@ const Route = createBrowserRouter([
   {
     path: "/register",
     element: <Register></Register>,
+  },
+  {
+    path: "/addService",
+    element: <AddService></AddService>,
   },
 ]);
 

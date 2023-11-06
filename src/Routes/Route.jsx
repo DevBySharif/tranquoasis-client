@@ -4,6 +4,7 @@ import AddService from "../Pages/AddService";
 import Error from "../Pages/Error";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
+import ManageServices from "../Pages/ManageServices";
 import PopularServices from "../Pages/PopularServices";
 import Register from "../Pages/Register";
 import ServiceDetails from "../Pages/ServiceDetails";
@@ -34,6 +35,10 @@ const Route = createBrowserRouter([
       {
         path: "details/:id",
         element: <ServiceDetails></ServiceDetails>,
+      },
+      {
+        path: "manage-services",
+        element: <ManageServices></ManageServices>,
       },
     ],
   },

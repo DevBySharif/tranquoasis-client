@@ -47,12 +47,12 @@ const Navbar = () => {
               {user ? (
                 <li>
                   <NavLink className="text-white font-bold">Dashboard</NavLink>
-                  <ul className="p-2">
+                  <ul className="p-2 font-semibold">
                     <li>
                       <Link to="/addService">Add-A-Service</Link>
                     </li>
                     <li>
-                      <Link>Submenu 2</Link>
+                      <Link to="/manage-services">Manage Services</Link>
                     </li>
                   </ul>
                 </li>
@@ -82,12 +82,12 @@ const Navbar = () => {
               <li tabIndex={0}>
                 <details>
                   <summary className="text-white font-bold">Dashboard</summary>
-                  <ul className="p-2">
+                  <ul className="p-2 font-semibold">
                     <li>
                       <Link to="/addService">Add-A-Service</Link>
                     </li>
                     <li>
-                      <Link>Submenu 2</Link>
+                      <Link to="/manage-services">Manage Services</Link>
                     </li>
                   </ul>
                 </details>

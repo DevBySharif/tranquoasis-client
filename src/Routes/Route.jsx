@@ -5,6 +5,7 @@ import Error from "../Pages/Error";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import ManageServices from "../Pages/ManageServices";
+import MySchedules from "../Pages/MySchedules";
 import PopularServices from "../Pages/PopularServices";
 import Register from "../Pages/Register";
 import ServiceDetails from "../Pages/ServiceDetails";
@@ -39,6 +40,10 @@ const Route = createBrowserRouter([
       {
         path: "manage-services",
         element: <ManageServices></ManageServices>,
+      },
+      {
+        path: "my-schedules",
+        element: <MySchedules></MySchedules>,
       },
     ],
   },

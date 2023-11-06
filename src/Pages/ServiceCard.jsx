@@ -1,9 +1,10 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const ServiceCard = ({ service }) => {
   const { user } = useContext(AuthContext);
-  const { serviceName, description, photo, yourName, price } = service;
+  const { serviceName, description, photo, yourName, price, _id } = service;
   return (
     <div>
       <div className="card card-compact  bg-[#fffcf6] hover:border border-green-400 cursor-pointer shadow-xl">
@@ -19,11 +20,13 @@ const ServiceCard = ({ service }) => {
                 <img src={user?.photoURL} />
               </div>
             </div>
-            <h3 className="text-xl font-bold text-green-600">Price:${price}</h3>
+            <h3 className="text-xl font-bold text-green-400">Price:${price}</h3>
           </div>
           <div className="flex justify-between items-center">
             <p className="text-xl font-semibold">Provider:{yourName}</p>
-            <button className="btn btn-primary">Details</button>
+            <Link to={`/details/${_id}`}>
+              <button className="btn btn-primary">Details</button>
+            </Link>
           </div>
         </div>
       </div>

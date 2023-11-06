@@ -5,7 +5,7 @@ const Error = () => {
     <div className="relative">
       <img src={errorImg} className="w-full h-screen" alt="" />
       <div>
-        <Link to="/">
+        <Link to="/home">
           <button className="btn btn-primary absolute lg:bottom-52 left-[45%]">
             Back To Home
           </button>

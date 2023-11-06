@@ -44,7 +44,7 @@ const AddService = () => {
   };
   return (
     <div className="p-24">
-      <Link to="/">
+      <Link to="/home">
         <button className="flex justify-center gap-2 items-center bg-green-500 px-4 py-3 mb-4 rounded-lg text-white font-semibold">
           <FaArrowLeft></FaArrowLeft> Back to Home
         </button>
@@ -76,8 +76,9 @@ const AddService = () => {
               <input
                 type="text"
                 name="yourName"
-                defaultValue={user?.name}
+                defaultValue={user?.displayName}
                 className="input input-bordered w-full"
+                disabled
               />
             </label>
           </div>
@@ -94,6 +95,7 @@ const AddService = () => {
                 name="yourEmail"
                 defaultValue={user?.email}
                 className="input input-bordered w-full"
+                disabled
               />
             </label>
           </div>

@@ -34,15 +34,19 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <NavLink>Home</NavLink>
+                <NavLink className="text-white font-bold" to="/home">
+                  Home
+                </NavLink>
               </li>
 
               <li>
-                <NavLink>Services</NavLink>
+                <NavLink className="text-white font-bold" to="/service">
+                  Services
+                </NavLink>
               </li>
               {user ? (
                 <li>
-                  <NavLink>Dashboard</NavLink>
+                  <NavLink className="text-white font-bold">Dashboard</NavLink>
                   <ul className="p-2">
                     <li>
                       <Link to="/addService">Add-A-Service</Link>
@@ -57,21 +61,27 @@ const Navbar = () => {
               )}
             </ul>
           </div>
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <NavLink to="home">Home</NavLink>
+              <NavLink className="text-white font-bold" to="/home">
+                Home
+              </NavLink>
             </li>
 
             <li>
-              <NavLink to="services">Services</NavLink>
+              <NavLink className="text-white font-bold" to="/services">
+                Services
+              </NavLink>
             </li>
             {user ? (
               <li tabIndex={0}>
                 <details>
-                  <summary>Dashboard</summary>
+                  <summary className="text-white font-bold">Dashboard</summary>
                   <ul className="p-2">
                     <li>
                       <Link to="/addService">Add-A-Service</Link>
@@ -116,7 +126,7 @@ const Navbar = () => {
             </div>
           ) : (
             <Link to="/login">
-              <button className="btn btn-sm  btn-ghost">Login</button>
+              <button className="btn btn-sm text-white btn-ghost">Login</button>
             </Link>
           )}
         </div>

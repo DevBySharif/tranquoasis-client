@@ -1,7 +1,8 @@
 import { Button, Label, Modal, TextInput } from "flowbite-react";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
-const ManageServiceCard = ({ yourService }) => {
+const ManageServiceCard = ({ yourService, services, setServices }) => {
   const {
     serviceName,
     photo,
@@ -46,14 +47,46 @@ const ManageServiceCard = ({ yourService }) => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          //   Swal.fire({
-          //     title: "Success!",
-          //     text: "Product Updated successfully",
-          //     icon: "Success",
-          //     confirmButtonText: "Cool",
-          //   });
+          Swal.fire({
+            title: "Success!",
+            text: "Service Updated successfully",
+            icon: "Success",
+            confirmButtonText: "Cool",
+          });
         }
       });
+  };
+
+  const handleDelete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        //
+        fetch(`http://localhost:5005/api/v1/services/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "Your product has been deleted.",
+                "success"
+              );
+              const remaining = services.filter((data) => data._id !== _id);
+              setServices(remaining);
+            }
+          });
+      }
+    });
   };
 
   return (
@@ -171,7 +204,12 @@ const ManageServiceCard = ({ yourService }) => {
               </Modal.Body>
             </Modal>
 
-            <button className="btn btn-active btn-accent">Delete</button>
+            <button
+              onClick={handleDelete}
+              className="btn btn-active btn-accent"
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>

@@ -27,6 +27,8 @@ const ManageServices = () => {
           <ManageServiceCard
             key={yourService._id}
             yourService={yourService}
+            services={services}
+            setServices={setServices}
           ></ManageServiceCard>
         ))}
       </div>

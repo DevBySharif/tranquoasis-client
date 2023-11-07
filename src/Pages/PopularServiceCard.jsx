@@ -23,7 +23,7 @@ const PopularServiceCard = ({ service }) => {
           </div>
           <div className="flex justify-between items-center">
             <p className="text-xl font-semibold">Provider:{yourName}</p>
-            <button className="btn btn-primary">Details</button>
+            <button className="btn btn-primary text-white">Details</button>
           </div>
         </div>
       </div>

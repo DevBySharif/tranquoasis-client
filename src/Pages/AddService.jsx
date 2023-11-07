@@ -44,7 +44,7 @@ const AddService = () => {
   };
   return (
     <div className="p-24">
-      <Link to="/home">
+      <Link to="/">
         <button className="flex justify-center gap-2 items-center bg-green-500 px-4 py-3 mb-4 rounded-lg text-white font-semibold">
           <FaArrowLeft></FaArrowLeft> Back to Home
         </button>

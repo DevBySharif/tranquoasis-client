@@ -1,5 +1,4 @@
 const MySchedulesTable = ({ service }) => {
-  console.log(service);
   const { serviceName, date, price, userEmail } = service;
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">

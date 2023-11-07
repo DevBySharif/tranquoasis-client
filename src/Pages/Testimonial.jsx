@@ -3,7 +3,7 @@ import img from "../assets/testimoniyalBg.png";
 const Testimonial = () => {
   return (
     <div
-      className="w-full h-full bg-[#325343] lg:pt-52"
+      className="w-full h-full bg-[#325343] "
       style={{
         backgroundImage: `url(${img})`,
         backgroundSize: "cover",
@@ -12,6 +12,9 @@ const Testimonial = () => {
       }}
     >
       <div className="max-w-7xl mx-auto">
+        <h1 className="lg:text-5xl font-bold text-center py-12 text-white">
+          What our customers are saying about us{" "}
+        </h1>
         <figure className="max-w-screen-md mx-auto text-center lg:pr-36 lg:pb-20">
           <svg
             className="w-10 h-10 mx-auto mb-3 text-green-400 dark:text-gray-600"

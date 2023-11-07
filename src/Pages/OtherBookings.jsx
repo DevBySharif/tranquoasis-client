@@ -7,61 +7,49 @@ const OtherBookings = ({ service, bookedServices, setBookedServices }) => {
   const { serviceName, date, price, userEmail, _id, status } = service;
 
   useEffect(() => {
-    if (status === "In Process" || status === "Completed") {
-      setSelectedOption(status);
-    }
+    setSelectedOption(status);
   }, [status]);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
     setMenuOpen(false);
-    handleInProcess(_id, option);
-    handleCompleted(_id, option);
+    handleStatusChange(_id, option);
   };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleInProcess = (id) => {
+  const handleStatusChange = (id, option) => {
     fetch(`http://localhost:5005/api/v1/user/booked-service/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ status: "In Process" }),
+      body: JSON.stringify({ status: option }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount) {
-          const remaining = bookedServices.filter((serve) => serve._id !== id);
-          const updated = bookedServices.find((serve) => serve._id === id);
-          updated.status = "In Process";
-          const newBooking = [updated, ...remaining];
-          setBookedServices(newBooking);
+          const updatedService = bookedServices.map((serve) =>
+            serve._id === id ? { ...serve, status: option } : serve
+          );
+          setBookedServices(updatedService);
         }
       });
   };
-  const handleCompleted = (id) => {
-    fetch(`http://localhost:5005/api/v1/user/booked-service/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ status: "Completed" }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.modifiedCount) {
-          const remaining = bookedServices.filter((serve) => serve._id !== id);
-          const updated = bookedServices.find((serve) => serve._id === id);
-          updated.status = "Completed";
-          const newBooking = [updated, ...remaining];
-          setBookedServices(newBooking);
-        }
-      });
+
+  const getStatusBackgroundColor = (status) => {
+    switch (status) {
+      case "Pending":
+        return "bg-red-500";
+      case "In Process":
+        return "bg-yellow-400";
+      case "Completed":
+        return "bg-green-500";
+      default:
+        return "";
+    }
   };
 
   return (
@@ -80,7 +68,9 @@ const OtherBookings = ({ service, bookedServices, setBookedServices }) => {
           <div>
             <button
               type="button"
-              className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-blue-200 active:bg-gray-100"
+              className={`inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-blue-200 active:bg-gray-100 ${getStatusBackgroundColor(
+                selectedOption
+              )}`}
               onClick={toggleMenu}
             >
               {selectedOption}
@@ -115,14 +105,24 @@ const OtherBookings = ({ service, bookedServices, setBookedServices }) => {
                 role="menuitem"
                 onClick={() => handleOptionChange("Pending")}
               >
-                <p className="text-gray-900 block px-4 py-2 text-sm">Pending</p>
+                <p
+                  className={`text-gray-900 block px-4 py-2 text-sm ${getStatusBackgroundColor(
+                    "Pending"
+                  )}`}
+                >
+                  Pending
+                </p>
               </div>
               <div
                 className="py-1"
                 role="menuitem"
                 onClick={() => handleOptionChange("In Process")}
               >
-                <p className="text-gray-900 block px-4 py-2 text-sm">
+                <p
+                  className={`text-gray-900 block px-4 py-2 text-sm ${getStatusBackgroundColor(
+                    "In Process"
+                  )}`}
+                >
                   In Process
                 </p>
               </div>
@@ -131,7 +131,11 @@ const OtherBookings = ({ service, bookedServices, setBookedServices }) => {
                 role="menuitem"
                 onClick={() => handleOptionChange("Completed")}
               >
-                <p className="text-gray-900 block px-4 py-2 text-sm">
+                <p
+                  className={`text-gray-900 block px-4 py-2 text-sm ${getStatusBackgroundColor(
+                    "Completed"
+                  )}`}
+                >
                   Completed
                 </p>
               </div>

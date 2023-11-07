@@ -1,10 +1,29 @@
+import { Typewriter } from "react-simple-typewriter";
+
 const LargestService = () => {
+  const handleType = () => {};
+
+  const handleDone = () => {};
   return (
     <div className="bg-[#fffcf6]">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-7xl mx-auto ">
         <div>
-          <h1 className="text-6xl">The world's largest therapy service.</h1>
-          <span className="text-[#397a4a] text-6xl">100% online.</span>
+          <h1 className="text-6xl">
+            The world&apos;s largest therapy service. <br />
+            <span style={{ color: "green", fontWeight: "bold" }}>
+              <Typewriter
+                words={["100% online.", "Time Saving.", "Trusted."]}
+                loop={5}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+                onLoopDone={handleDone}
+                onType={handleType}
+              />
+            </span>
+          </h1>
         </div>
         <div className="space-y-4">
           <h1 className="text-4xl text-[#397a4a] font-bold">

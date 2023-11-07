@@ -10,6 +10,7 @@ import PopularServices from "../Pages/PopularServices";
 import Register from "../Pages/Register";
 import ServiceDetails from "../Pages/ServiceDetails";
 import Services from "../Pages/Services";
+import PrivateRoute from "./PrivateRoute";
 
 const Route = createBrowserRouter([
   {
@@ -31,19 +32,35 @@ const Route = createBrowserRouter([
       },
       {
         path: "addService",
-        element: <AddService></AddService>,
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
       },
       {
         path: "details/:id",
-        element: <ServiceDetails></ServiceDetails>,
+        element: (
+          <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "manage-services",
-        element: <ManageServices></ManageServices>,
+        element: (
+          <PrivateRoute>
+            <ManageServices></ManageServices>
+          </PrivateRoute>
+        ),
       },
       {
         path: "my-schedules",
-        element: <MySchedules></MySchedules>,
+        element: (
+          <PrivateRoute>
+            <MySchedules></MySchedules>
+          </PrivateRoute>
+        ),
       },
     ],
   },

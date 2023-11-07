@@ -50,7 +50,7 @@ const ManageServiceCard = ({ yourService, services, setServices }) => {
           Swal.fire({
             title: "Success!",
             text: "Service Updated successfully",
-            icon: "Success",
+            icon: "success",
             confirmButtonText: "Cool",
           });
         }
@@ -78,7 +78,7 @@ const ManageServiceCard = ({ yourService, services, setServices }) => {
             if (data.deletedCount > 0) {
               Swal.fire(
                 "Deleted!",
-                "Your product has been deleted.",
+                "Your Service has been deleted.",
                 "success"
               );
               const remaining = services.filter((data) => data._id !== _id);

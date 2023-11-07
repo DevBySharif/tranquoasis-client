@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import loginimg from "../assets/loginimg.png";
+import loginImg from "../assets/loginimg.png";
 import SocialLogin from "./SocialLogin";
 
 const Login = () => {
@@ -33,7 +33,7 @@ const Login = () => {
     <div
       className="relative  h-screen  flex justify-end items-center lg:pr-36"
       style={{
-        backgroundImage: `url(${loginimg})`,
+        backgroundImage: `url(${loginImg})`,
         height: "100vh",
         backgroundSize: "cover",
       }}

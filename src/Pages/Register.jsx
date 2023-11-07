@@ -17,6 +17,7 @@ const Register = () => {
 
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const photo = e.target.photo.value;
     const accepted = e.target.terms.checked;
 
     setRegisterError("");
@@ -91,6 +92,18 @@ const Register = () => {
                 required
               />
             </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">PhotoURL</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Photo"
+                name="photo"
+                className="input input-bordered"
+                required
+              />
+            </div>
             <div>
               <input type="checkbox" name="terms" />
               <label className="ml-3" htmlFor="">
@@ -98,7 +111,7 @@ const Register = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-neutral">Register</button>
+              <button className="btn btn-primary">Register</button>
             </div>
             {registerError && <p className="text-red-500">{registerError}</p>}
             {registrationSuccess && (
@@ -106,7 +119,7 @@ const Register = () => {
             )}
             <p className="flex justify-between">
               Already have an account?{" "}
-              <Link className="text-blue-600" to="/login">
+              <Link className="text-green-500" to="/login">
                 Login
               </Link>
             </p>

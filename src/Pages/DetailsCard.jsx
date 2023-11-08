@@ -15,6 +15,7 @@ const DetailsCard = ({ foundService }) => {
     serviceArea,
     yourEmail,
     yourName,
+    providerPhoto,
   } = foundService;
   const handlePurchase = (event) => {
     event.preventDefault();
@@ -171,7 +172,7 @@ const DetailsCard = ({ foundService }) => {
           <h3 className="text-xl font-semibold mb-9">Provider</h3>
           <div className="avatar flex justify-center">
             <div className="w-24 rounded border border-green-500">
-              <img src={user?.photoURL} />
+              <img src={providerPhoto} />
             </div>
           </div>
           <div className="text-center text-3xl font-medium">

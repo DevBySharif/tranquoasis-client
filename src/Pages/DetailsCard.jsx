@@ -37,7 +37,7 @@ const DetailsCard = ({ foundService }) => {
       instruction,
     };
 
-    fetch("http://localhost:5005/api/v1/user/booked-service", {
+    fetch("https://tranquoasis-server.vercel.app/api/v1/user/booked-service", {
       method: "POST",
       headers: {
         "content-type": "application/json",

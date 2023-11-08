@@ -7,7 +7,7 @@ const Services = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5005/api/v1/services")
+    fetch("https://tranquoasis-server.vercel.app/api/v1/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

@@ -27,7 +27,7 @@ const AddService = () => {
       photo,
     };
 
-    fetch("http://localhost:5005/api/v1/services", {
+    fetch("https://tranquoasis-server.vercel.app/api/v1/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

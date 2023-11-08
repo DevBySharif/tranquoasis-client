@@ -21,13 +21,16 @@ const OtherBookings = ({ service, bookedServices, setBookedServices }) => {
   };
 
   const handleStatusChange = (id, option) => {
-    fetch(`http://localhost:5005/api/v1/user/booked-service/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ status: option }),
-    })
+    fetch(
+      `https://tranquoasis-server.vercel.app/api/v1/user/booked-service/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ status: option }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {

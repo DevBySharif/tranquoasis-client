@@ -36,7 +36,7 @@ const ManageServiceCard = ({ yourService, services, setServices }) => {
       photo,
     };
 
-    fetch(`http://localhost:5005/api/v1/services/${_id}`, {
+    fetch(`https://tranquoasis-server.vercel.app/api/v1/services/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -69,7 +69,7 @@ const ManageServiceCard = ({ yourService, services, setServices }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         //
-        fetch(`http://localhost:5005/api/v1/services/${_id}`, {
+        fetch(`https://tranquoasis-server.vercel.app/api/v1/services/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

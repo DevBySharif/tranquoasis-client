@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import DetailsCard from "./DetailsCard";
 
@@ -28,6 +29,11 @@ const ServiceDetails = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <DetailsCard foundService={foundService}></DetailsCard>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home | Service | Details</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     </div>
   );
 };

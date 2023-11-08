@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -6,6 +7,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
+  const providerPhoto = user.photoURL;
+  console.log(providerPhoto);
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -25,6 +28,7 @@ const AddService = () => {
       serviceArea,
       description,
       photo,
+      providerPhoto,
     };
 
     fetch("https://tranquoasis-server.vercel.app/api/v1/services", {
@@ -163,6 +167,11 @@ const AddService = () => {
           className="btn-block bg-green-500 py-3 rounded-lg text-white font-bold"
         />
       </form>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home | Add Service</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     </div>
   );
 };

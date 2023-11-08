@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
@@ -72,12 +73,17 @@ const Services = () => {
                 onClick={() => setIsShow(!isShow)}
                 className="px-5 py-3 bg-green-500 text-lg text-white font-bold block mx-auto rounded-md"
               >
-                {isShow ? "See less" : "See more"}
+                {isShow ? "See more" : "See less"}
               </button>
             )}
           </div>
         </div>
       </div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home | Service</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     </div>
   );
 };

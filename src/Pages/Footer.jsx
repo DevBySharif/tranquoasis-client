@@ -19,8 +19,8 @@ const Footer = () => {
             <div>
               <Foot.Title title="about" />
               <Foot.LinkGroup col>
-                <Foot.Link href="#">Flowbite</Foot.Link>
-                <Foot.Link href="#">Tailwind CSS</Foot.Link>
+                <Foot.Link href="#">Tranquoasis</Foot.Link>
+                <Foot.Link href="#">Services</Foot.Link>
               </Foot.LinkGroup>
             </div>
             <div>
@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
         <Foot.Divider />
         <div className="w-full sm:flex sm:items-center sm:justify-between">
-          <Foot.Copyright href="#" by="Flowbite™" year={2022} />
+          <Foot.Copyright href="#" by="Sharif Obaidullah™" year={2023} />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Foot.Icon href="#" icon={BsFacebook} />
             <Foot.Icon href="#" icon={BsInstagram} />

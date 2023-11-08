@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { AuthContext } from "../Provider/AuthProvider";
 import MySchedulesTable from "./MySchedulesTable";
 import OtherBookings from "./OtherBookings";
@@ -105,6 +106,11 @@ const MySchedules = () => {
           </tbody>
         </table>
       </div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home | My Schedules</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     </div>
   );
 };

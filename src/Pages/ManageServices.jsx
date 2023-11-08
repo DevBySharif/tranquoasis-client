@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { AuthContext } from "../Provider/AuthProvider";
 import ManageServiceCard from "./ManageServiceCard";
 
@@ -32,6 +33,11 @@ const ManageServices = () => {
           ></ManageServiceCard>
         ))}
       </div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home | Manage Service</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     </div>
   );
 };

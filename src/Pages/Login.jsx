@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -84,6 +85,11 @@ const Login = () => {
           <SocialLogin></SocialLogin>
         </form>
       </div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Tranquosis | Login</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     </div>
   );
 };

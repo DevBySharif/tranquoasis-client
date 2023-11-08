@@ -1,9 +1,10 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const PopularServiceCard = ({ service }) => {
   const { user } = useContext(AuthContext);
-  const { serviceName, description, photo, yourName, price } = service;
+  const { serviceName, description, photo, yourName, price, _id } = service;
   return (
     <div>
       <div className="card card-compact  bg-[#fffcf6] hover:border border-green-400 cursor-pointer shadow-xl">
@@ -23,7 +24,10 @@ const PopularServiceCard = ({ service }) => {
           </div>
           <div className="flex justify-between items-center">
             <p className="text-xl font-semibold">Provider:{yourName}</p>
-            <button className="btn btn-primary text-white">Details</button>
+
+            <Link to={`/details/${_id}`}>
+              <button className="btn btn-primary text-white">Details</button>
+            </Link>
           </div>
         </div>
       </div>

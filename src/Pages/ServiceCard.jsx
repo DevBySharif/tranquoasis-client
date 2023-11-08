@@ -9,7 +9,7 @@ const ServiceCard = ({ service }) => {
     <div>
       <div className="card card-compact  bg-[#fffcf6] hover:border border-green-400 cursor-pointer shadow-xl">
         <figure>
-          <img src={photo} alt="Shoes" />
+          <img src={photo} className="h-[250px] w-full" alt="Shoes" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{serviceName}</h2>
@@ -25,7 +25,7 @@ const ServiceCard = ({ service }) => {
           <div className="flex justify-between items-center">
             <p className="text-xl font-semibold">Provider:{yourName}</p>
             <Link to={`/details/${_id}`}>
-              <button className="btn btn-primary">Details</button>
+              <button className="btn btn-primary text-white">Details</button>
             </Link>
           </div>
         </div>

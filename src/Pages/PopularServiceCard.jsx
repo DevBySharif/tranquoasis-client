@@ -4,7 +4,15 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const PopularServiceCard = ({ service }) => {
   const { user } = useContext(AuthContext);
-  const { serviceName, description, photo, yourName, price, _id } = service;
+  const {
+    serviceName,
+    description,
+    photo,
+    yourName,
+    price,
+    _id,
+    providerPhoto,
+  } = service;
   return (
     <div>
       <div className="card card-compact  bg-[#fffcf6] hover:border border-green-400 cursor-pointer shadow-xl">
@@ -17,7 +25,7 @@ const PopularServiceCard = ({ service }) => {
           <div className="card-actions justify-between items-center">
             <div className="avatar">
               <div className="w-54 rounded border border-green-500">
-                <img src={user?.photoURL} />
+                <img src={providerPhoto} />
               </div>
             </div>
             <h3 className="text-xl font-bold text-green-600">Price:${price}</h3>
